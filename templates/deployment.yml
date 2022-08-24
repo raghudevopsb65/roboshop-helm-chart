@@ -19,6 +19,8 @@ spec:
       containers:
       - name: {{.Values.appName}}
         image: 633788536644.dkr.ecr.us-east-1.amazonaws.com/{{.Values.appName}}
+        imagePullPolicy: Always
+
 
 
 
