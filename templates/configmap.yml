@@ -1,6 +1,6 @@
 {{- if .Values.configMap.enabled -}}
 apiVersion: v1
-kind: Configmap
+kind: ConfigMap
 metadata:
   name: {{ .Values.appName }}
 data:
