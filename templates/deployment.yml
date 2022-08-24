@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.appName }}
   labels:
     app: {{ .Values.appName }}
-    ephoc: {{ .Values.ephoc }}
+    ephoc: "{{ .Values.ephoc }}"
 spec:
   replicas: 1
   selector:
