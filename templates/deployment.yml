@@ -31,3 +31,16 @@ spec:
         {{- end }}
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
+        livenessProbe:
+          httpGet:
+            path: {{ .Values.health.endpoint }}
+            port: {{ .Values.health.port }}
+          initialDelaySeconds: {{ .Values.health.liveness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.health.liveness.periodSeconds }}
+        readinessProbe:
+          httpGet:
+            path: {{ .Values.health.endpoint }}
+            port: {{ .Values.health.port }}
+          initialDelaySeconds: {{ .Values.health.readiness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.health.readiness.periodSeconds }}
+
